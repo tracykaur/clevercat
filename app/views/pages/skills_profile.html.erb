@@ -1,14 +1,18 @@
 <%= form_with model: @skill, local: true, url: "/tutor/skill" do |f| %>
 
+<% @skills.each do |skill| %>
 
 <div class="field">
   <%= f.label :skills %><br>
   <%= f.collection_select(:skill_id, Skill.all, :id, :name) %><br>
 </div>
+<% end %>
 
 <br>
 <div class="actions">
   <%= f.submit class: 'btn btn-primary' %>
 </div>
+
+
 
 <% end %>

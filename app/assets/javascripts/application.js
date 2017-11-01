@@ -13,3 +13,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+var toggleNavigationButton = $('#nav-toggle'),
+    navigation = $('.nav');
+
+toggleNavigationButton.click(function(){
+    navigation.toggleClass('is-open');
+});
