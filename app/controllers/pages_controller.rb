@@ -9,6 +9,11 @@ class PagesController < ApplicationController
   def find_a_tutor
   end
 
-
+  def update_profile
+    @profile = current_user.profile
+    @profile.headline = params[:headline]
+    @profile.description = params[:description]
+    @profile.save
+  end
 
 end
