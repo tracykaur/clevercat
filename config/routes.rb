@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/tutor_signup', to: 'pages#tutor_signup'
   get '/find_a_tutor', to: 'pages#find_a_tutor'
   get '/tutor_profile', to: 'pages#tutor_profile'
-  post '/tutor_profile', to: 'pages#update_profile'
+  patch '/tutor_profile', to: 'pages#update_profile'
 
 
   resources :tutors
