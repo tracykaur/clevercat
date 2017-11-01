@@ -9,13 +9,19 @@ class PagesController < ApplicationController
   def find_a_tutor
   end
 
+  def skills_profile
+    @skills = current_user.tutor.skills
+
+  end
+
   def tutor_profile
     if current_user.tutor.nil?
       Tutor.create({user:current_user})
-    end  
+    end
     @tutor = current_user.tutor
 
   end
+
 
 
 
