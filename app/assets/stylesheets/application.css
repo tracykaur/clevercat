@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   text-align: center;
+   font-family: 'Roboto', sans-serif;
+ }
+
+ .container-fluid {
+   padding-top: 15px;
+ }
+
+ .navbar-nav > li > a:hover {
+     color: white;
+ }

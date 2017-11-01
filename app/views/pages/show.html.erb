@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+
+  <% if @stutor_id = current_user.tutor %>
+  <h5><%= link_to 'Back', tutor_profile_path %></h5>
+  <% end %>
+
+
+
+
+  <p>
+    <strong>Profile Headline:</strong>
+    <%= @headline %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @description %>
+  </p>
+
+  <p>
+    <strong>Hourly Rate: </strong>
+    <%= @hourly_rate %>
+  </p>
+
+  <p>
+    <strong>Skills: </strong>
+    <%= @skills %>
+  </p>
+
+
+
+
+
+
+
+
+</div>

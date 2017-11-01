@@ -1,24 +1,24 @@
 <%= form_with model: @tutor, local: true, url: "/tutor_profile" do |f| %>
 
 
-
+<br>
 <div class="field">
-  <%= f.label 'profile headline' %><br />
+  <%= f.label 'profile headline' %><br>
   <%= f.text_area :headline %>
 </div>
 
 <div class="field">
-  <%= f.label :description %><br />
+  <%= f.label :description %><br>
   <%= f.text_area :description, id: :description %>
 </div>
 
 <div class="field">
-  <%= f.label :hourly_rate, "Hourly_Rate ($)" %>
+  <%= f.label :hourly_rate, "Hourly_Rate ($)" %><br>
   <%= f.text_field :hourly_rate %>
 </div>
-
+<br>
 <div class="actions">
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn btn-primary' %><br>
 </div>
 
 <% end %>
