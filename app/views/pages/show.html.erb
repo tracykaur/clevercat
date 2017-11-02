@@ -1,11 +1,14 @@
 <div class="container-fluid">
   <p id="notice"><%= notice %></p>
 
-  <% if @stutor_id = current_user.tutor %>
-  <h5><%= link_to 'Back', tutor_profile_path %></h5>
+  <% if @tutor_id = current_user.tutor %>
+  <h5><%= link_to 'Back to Edit Profile', "/edit-profile" %></h5>
   <% end %>
 
-
+  <p>
+    <strong>Profile Avatar:</strong>
+  <%= image_tag current_user.tutor.avatar.url(:medium) %>
+  </p>
 
 
   <p>
@@ -25,8 +28,10 @@
 
   <p>
     <strong>Skills: </strong>
-    <%= @skills %>
-  </p>
+    <% @skills.each do |skill| %>
+    <%= skill.name %><br>
+
+    <% end %>  </p>
 
 
 
