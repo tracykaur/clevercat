@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, only: [:tutor_profile]
 
   def index
   end
@@ -26,6 +27,7 @@ class PagesController < ApplicationController
 
 
   def tutor_profile
+
     if current_user.tutor.nil?
       Tutor.create({user:current_user})
     end
