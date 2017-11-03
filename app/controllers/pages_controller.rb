@@ -7,12 +7,14 @@ class PagesController < ApplicationController
   end
 
   def find_a_tutor
+  @tutors = Tutor.all
+
   end
 
   def skills_profile
     @skills = current_user.tutor.skills
-
   end
+
 
   def show
     @skills = current_user.tutor.skills

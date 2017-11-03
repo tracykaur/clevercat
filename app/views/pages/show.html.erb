@@ -2,13 +2,12 @@
   <p id="notice"><%= notice %></p>
 
   <% if @tutor_id = current_user.tutor %>
-  <h5><%= link_to 'Back to Edit Profile', "/edit-profile" %></h5>
+  <h6><%= link_to 'Do you need to Edit Your Profile?', "/edit-profile" %></h6>
   <% end %>
 
-  <p>
-    <strong>Profile Avatar:</strong>
+  <p><strong>Profile Avatar:</strong></p>
   <%= image_tag current_user.tutor.avatar.url(:medium) %>
-  </p>
+
 
 
   <p>
@@ -27,17 +26,10 @@
   </p>
 
   <p>
-    <strong>Skills: </strong>
+    <strong>Skills: </strong><br>
     <% @skills.each do |skill| %>
-    <%= skill.name %><br>
+    <%= skill.name %>
 
     <% end %>  </p>
-
-
-
-
-
-
-
 
 </div>

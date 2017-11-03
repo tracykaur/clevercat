@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+
+
+  <% @tutors.each do |tutor| %>
+    <div class="row listing">
+      <div class="col-md-3 listing-photo"><br>
+        <%= image_tag tutor.avatar.url(:medium) %><br>
+      </div>
+      <div class="col-md-9 listing-text">
+    <strong>Profile Headline:</strong>
+    <p><strong> <%= @headline %> </strong></p>
+    <strong>Description:</strong>
+    <p> <%= tutor.description %></p>
+    <strong>Hourly Rate $: </strong>
+    <p> <%= tutor.hourly_rate %> </p>
+    <strong>Skills: </strong>
+    <% tutor.skills.each do |skill| %>
+    <%= skill.name %>
+  <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
