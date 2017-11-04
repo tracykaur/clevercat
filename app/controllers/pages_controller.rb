@@ -48,4 +48,7 @@ class PagesController < ApplicationController
     redirect_to "/edit-skills"
   end
 
+  def facebook
+  end
+
 end
