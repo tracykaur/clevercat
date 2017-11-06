@@ -41,3 +41,9 @@
   box-shadow: 1px 1px 3px 2px #f5f8fa;
   text-align: left;
 }
+
+#map {
+  height: 400px;
+  width: 100%;
+
+}

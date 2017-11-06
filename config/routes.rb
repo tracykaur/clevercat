@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   root 'pages#index'
 
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   get '/edit-skills', to: 'pages#skills_profile'
   post 'tutor/skill', to: 'tutors#add_skill'
   get 'profile', to: 'pages#show'
+  get 'profile/:id', to: 'pages#show'
+
   get 'facebook', to: 'pages#facebook'
 
   resources :tutors

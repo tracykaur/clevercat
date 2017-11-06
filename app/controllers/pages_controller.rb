@@ -8,8 +8,24 @@ class PagesController < ApplicationController
   end
 
   def find_a_tutor
-  @tutors = Tutor.all
-
+    @tutors = Tutor.all
+    @map_tutors = []
+    User.where({role:"tutor"}).each do |user|
+      skills = []
+      user.tutor.skills.each do |skill|
+        skills.push(skill.name)
+      end
+      @map_tutors.push({
+        latitude:user.latitude,
+        longitude:user.longitude,
+        name:user.name,
+        headline:user.tutor.headline,
+        skills:skills,
+        hourly_rate: user.tutor.hourly_rate,
+        avatar:user.tutor.avatar.url(:thumb),
+        id:user.tutor.id,
+      })
+    end
   end
 
   def skills_profile
@@ -18,10 +34,16 @@ class PagesController < ApplicationController
 
 
   def show
-    @skills = current_user.tutor.skills
-    @headline = current_user.tutor.headline
-    @description = current_user.tutor.description
-    @hourly_rate = current_user.tutor.hourly_rate
+    if params[:id].nil?
+      user = current_user
+    else
+      user = User.find(params[:id])
+    end
+
+    @skills = user.tutor.skills
+    @headline = user.tutor.headline
+    @description = user.tutor.description
+    @hourly_rate = user.tutor.hourly_rate
 
   end
 

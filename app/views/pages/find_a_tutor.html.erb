@@ -1,6 +1,122 @@
 <div class="container-fluid">
   <p id="notice"><%= notice %></p>
 
+</div>
+  <p class="landingbutton">
+    <label for="postcode">Find tutors near you. Please enter your postcode</label>
+    <input name="postcode" type="text" id="postcode"></input>
+  </p>
+</div>
+
+<div id="map"></div>
+<script>
+var locations = <%= @map_tutors.to_json.html_safe %>;
+  // var locations = []
+  var gMap;
+  function initMap() {
+    var mapSetup = {
+      zoom: 5,
+      center: {
+        lat: -28.024,
+        lng: 140.887
+      }
+    };
+
+    //If a postcode has been searched before, use that on load
+    if (localStorage) {
+      var lastSearchString = localStorage.getItem('lastSearch');
+      if (lastSearchString) {
+        var lastSearch = JSON.parse(lastSearchString);
+        if (lastSearch) {
+          mapSetup.zoom = 10;
+          mapSetup.center = lastSearch;
+        }
+      }
+
+    };
+
+    gMap = new google.maps.Map(document.getElementById('map'), mapSetup);
+    var infowindows = [];
+
+    function markerClicked(marker) {
+      return function () {
+        var contentString = '<div id="content"><div id="siteNotice"></div><h4 id="firstHeading" class="firstHeading">' + marker.location.name +
+        '</h4>' +
+        '<div id="bodyContent"><b>Headline:</b> ' + marker.location.headline +
+        '<div id="bodyContent"><b>Skills:</b> ' + marker.location.skills.join(", ") +
+        '<div id="bodyContent"><b>Hourly Rate $:</b> ' + marker.location.hourly_rate +
+        '<div id="bodyContent"><img src="' + marker.location.avatar+ '">' +
+        ', <br><a href="/profile/' + marker.location.id + '">'+
+        ' Contact this tutor</a>'
+
+        '.</div></div>';
+
+        // https://developers.google.com/maps/documentation/javascript/infowindows#close
+        var infowindow = new google.maps.InfoWindow({content: contentString});
+        infowindow.open(gMap, marker);
+        infowindows.forEach(function (w) {
+          w.close()
+        });
+        infowindows.push(infowindow);
+      }
+    }
+
+    // var markers = locations.map(function (location, i) {
+    //   // https://developers.google.com/maps/documentation/javascript/markers
+    //   var marker = new google.maps.Marker({map: gMap, position: location.coords, });
+    //   marker.location = location;
+    //   marker.addListener('click', markerClicked(marker));
+    //   return marker;
+    // });
+    // // remove the above once this one approved
+    var markers = locations.map(function (location, i) {
+      // https://developers.google.com/maps/documentation/javascript/markers
+      var marker = new google.maps.Marker({
+        map: gMap,
+        position: {
+          lat: location.latitude,
+          lng: location.longitude
+        }
+      });
+      marker.location = location;
+      marker.addListener('click', markerClicked(marker));
+      return marker;
+    });
+
+    // Add a marker clusterer to manage the markers.
+    var markerCluster = new MarkerClusterer(gMap, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  }
+
+  var postcodeInput = document.getElementById('postcode');
+  postcodeInput.oninput = function () {
+    if (postcodeInput.value.length !== 4)
+      return;
+
+    var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + postcodeInput.value + ',+Australia&key=AIzaSyBe6vvbBBOqwBOPODr-W30BHPn_gdRfBnU';
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", function () {
+      var data = JSON.parse(this.responseText);
+      if (data.status !== 'OK')
+        return;
+      if (!data.results[0])
+        return;
+      var location = data.results[0].geometry.location;
+
+      gMap.setCenter(location);
+      gMap.setZoom(10);
+
+      if (!localStorage)
+        return;
+      localStorage.setItem('lastSearch', JSON.stringify(location));
+    });
+    oReq.open("GET", url);
+    oReq.send();
+  }
+  postcodeInput.onpropertychange = postcodeInput.oninput; // for IE8
+</script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe6vvbBBOqwBOPODr-W30BHPn_gdRfBnU&callback=initMap"></script>
+
 
   <% @tutors.each do |tutor| %>
     <div class="row listing">
