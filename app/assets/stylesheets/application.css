@@ -20,8 +20,10 @@
    padding: 20px;
  }
 
- .container {
-   padding-top: 15px;
+ #map {
+   height: 400px;
+   width: 100%;
+
  }
 
  .nav ul {
@@ -170,10 +172,4 @@
   border-radius: 10px;
   box-shadow: 1px 1px 3px 2px #f5f8fa;
   text-align: left;
-}
-
-#map {
-  height: 400px;
-  width: 100%;
-
 }

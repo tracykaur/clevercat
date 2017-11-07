@@ -1,0 +1,27 @@
+
+
+.background_image{
+  background-image: image-url("thought.jpg");
+  background-size: 90%;
+      background-size: cover;
+  	-webkit-background-size: cover;
+      -moz-background-size: cover;
+  	height: 600px;
+  	min-height: 35vh;
+  	padding: 0;
+
+
+}
+
+
+.box{
+  background-color: rgba(0,0,0,0.1);
+  padding: 50px;
+  padding-left: 200px;
+  width: 80%;
+  text-align:center;
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(30%);
+  color: #37aee5;
+}
