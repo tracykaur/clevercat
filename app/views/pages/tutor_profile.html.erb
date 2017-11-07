@@ -3,31 +3,27 @@
 
 <br>
 <div class="field">
-  <%= f.label 'profile headline' %><br>
-  <%= f.text_area :headline %>
+  <strong><%= f.label 'profile headline' %></strong><br>
+  <%= f.text_area :headline, :rows => 2, style: 'width:100%;' %>
 </div>
 
 <div class="field">
-  <%= f.label :description %><br>
-  <%= f.text_area :description, id: :description %>
+  <strong><%= f.label :description %></strong><br>
+  <%= f.text_area :description, id: :description, :rows => 15, style: 'width:100%;' %>
 </div>
 
 <div class="field">
-  <%= f.label :hourly_rate, "Hourly_Rate ($)" %><br>
+  <strong><%= f.label :hourly_rate, "Hourly_Rate ($)" %></strong><br>
   <%= f.text_field :hourly_rate %>
 </div>
 <br>
 
-<div class="field">
-  <%= f.label :hourly_rate, "Would you like you Profile to appear first" %><br>
-  <%= f.text_field :upgrade %>
-</div>
-
 <br>
 <div class="field">
-  <%= f.label "Upload Profle Photo" %><br>
+  <strong><%= f.label "Upload Profle Photo" %></strong><br>
   <%= f.file_field :avatar %><br>
 </div>
+<br>
 
 <div class="actions">
   <%= f.submit class: 'btn btn-primary' %><br>
