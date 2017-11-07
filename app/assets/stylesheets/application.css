@@ -61,7 +61,7 @@
          -ms-transition: background 0.2s ease-in-out;
          -o-transition: background 0.2s ease-in-out;
  		transition: background 0.2s ease-in-out;
-
+}
 
  .nav a:active{
  background: black;
@@ -84,24 +84,21 @@
    border-top: 0;
  }
 
-
- }
  /* Styling the toggle menu link and hiding it */
  .nav .navtoogle {
-   display: none;
-   width: 100%;
-   padding: .5em .5em .8em;
-   text-align: left;
-   font-size: 1.2em;
-   background: none;
-   border: none;
- 	height: 45px;
-
- 	  margin: 0;
-  	 padding: 0;
-   	list-style: none;
+  display: none;
+  width: 100%;
+  padding: .5em .5em .8em;
+  text-align: left;
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  height: 45px;
+  margin: 0;
+	padding: 0;
+ 	list-style: none;
  	font-size: 14px;
-  	 text-align: center;
+  text-align: center;
  	background: rgba(255,255,255,0.9);
  	border-bottom: 1px rgba(0,0,0,0.1) solid;
  	font-weight: 300;
@@ -109,12 +106,13 @@
  	line-height: 1.7;
  	text-transform: uppercase;
  }
+
  .nav .navtoogle:before {
- content: '\2630';
+   content: '\2630';
    padding-right: .5em;
    font-size: 1.2em;
  }
- /* The breakpoint here will depend on your content, menu lenght, font size, and so on :) */
+
  @media (max-width: 680px) {
    .nav li {
      margin: 0;
@@ -125,19 +123,19 @@
      padding: .8em 1.2em .8em;
    }
    .js .nav {
-     /* Unhiding the styled menu link */
-
-     /* When JavaScript is enabled, we hide the menu */
 
    }
+
    .js .nav .navtoogle {
      margin: 0;
      display: block;
    }
+
    .js .nav ul {
      max-height: 0em;
      overflow: hidden;
    }
+
    .js .nav .active + ul {
      max-height: 30em;
      overflow: hidden;
@@ -147,6 +145,7 @@
      -ms-transition: max-height 0.4s;
      transition: max-height 0.4s;
    }
+
    /* If JavaScript is disabled, the menu stays open */
    .no-js .nav ul {
      max-height: 30em;
