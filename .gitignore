@@ -18,3 +18,5 @@
 
 .byebug_history
 /public/system
+
+.env

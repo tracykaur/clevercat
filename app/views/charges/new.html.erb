@@ -1,0 +1,22 @@
+<h1>What is a Bump Up?</h1>
+
+<h3>It’s simply paying a little money to get your ad – regular or featured –
+  back to the top of the listings. </h3>
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $2.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Bump up your profile"
+          data-amount="200"
+          data-locale="auto"></script>
+<% end %>
