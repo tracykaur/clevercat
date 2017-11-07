@@ -1,27 +1,71 @@
-
+#map {
+  height: 400px;
+  width: 100%;
+}
 
 .background_image{
   background-image: image-url("thought.jpg");
   background-size: 90%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
       background-size: cover;
   	-webkit-background-size: cover;
       -moz-background-size: cover;
-  	height: 600px;
+  	height: 800px;
   	min-height: 35vh;
   	padding: 0;
 
-
 }
-
 
 .box{
   background-color: rgba(0,0,0,0.1);
-  padding: 50px;
+  padding: 30px;
   padding-left: 200px;
+  height: 400px;
   width: 80%;
   text-align:center;
   margin: 0 auto;
   position: relative;
   transform: translateY(30%);
   color: #37aee5;
+}
+
+.sign_up{
+  background-image: image-url("boy_chalkboard.jpg");
+  background-size: 90%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+  	-webkit-background-size: cover;
+      -moz-background-size: cover;
+  	height: 800px;
+  	min-height: 35vh;
+  	padding: 0;
+
+}
+
+.text{
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px;
+  padding-left: 100px;
+  height: 300px;
+  width: 80%;
+  text-align:center;
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(50%);
+  color: #37aee5;
+}
+
+.listing {
+ background-color: #E8F5FD;;
+ padding: 5px;
+ margin: 20px 20px 20px 20px;
+ border-radius: 10px;
+ box-shadow: 1px 1px 3px 2px #f5f8fa;
+ text-align: left;
 }
