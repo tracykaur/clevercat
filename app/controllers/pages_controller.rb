@@ -44,7 +44,7 @@ class PagesController < ApplicationController
     @headline = user.tutor.headline
     @description = user.tutor.description
     @hourly_rate = user.tutor.hourly_rate
-
+    @image = user.tutor.avatar.url(:medium)
   end
 
 

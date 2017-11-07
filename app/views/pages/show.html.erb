@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <p id="notice"><%= notice %></p>
 
-  <% if @tutor_id = current_user.tutor %>
+  <% if user_signed_in? and @tutor_id = current_user.tutor %>
   <h6><%= link_to 'Do you need to Edit Your Profile?', "/edit-profile" %></h6>
   <% end %>
 
   <p><strong>Profile Avatar:</strong></p>
-  <%= image_tag current_user.tutor.avatar.url(:medium) %>
+  <%= image_tag @image%>
 
 
 
