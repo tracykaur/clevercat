@@ -10,12 +10,13 @@
 7. Entity Relationship Diagram
 8. List of Tools Used
 9. Future Updates
+10. App images
+
 
 ------------------
 
 Link : https://clevercat.xyz/
 ## 1. Summary
-
 This app was designed as part of the CoderAcademy assignment to build a two-sided marketplace.
 
 PROBLEM DEFINITION
@@ -28,7 +29,6 @@ A tutoring app solves a real problem for students of all ages and parents — to
 The design is based on a two sided marketplace whereby tutors can advertise their skills and students can search for tutors based on their skills and locations. The app allows you to seamlessly contact tutors nearby and schedule a session at a fraction of the cost of traditional services
 
 -----------------------
-
 ## 2 Installation
 Configuration - you will not have an ENV file as this has been ignored through Git. In order to run the App you will need to create a .env file with your own mailgun and stripe API keys.
 1. Clone the repo then change into the directory.
@@ -44,7 +44,6 @@ Configuration - you will not have an ENV file as this has been ignored through G
 --------------
 
 ## 3. Requirements
-
 1. Create your application using Ruby on Rails
 2. Demonstrate knowledge of Rails conventions.
 3. Use postgresql database in development.
@@ -63,7 +62,6 @@ Configuration - you will not have an ENV file as this has been ignored through G
 
 -----------------------
 ## 4. User Stories
-
 ![User stories for the whole application.](app/assets/images/user_stories.png)
 
 -----------------------
@@ -81,23 +79,18 @@ Configuration - you will not have an ENV file as this has been ignored through G
 ----------------
 
 ## 8. List of Tools Used
-
-------------------
-
-## 6. List of Tools Used
-
 1. Github - for version control, user stories and to assign story points.
 2. Lucidchart - for ERD
 3. Rubocop for code review
 4. Gems: `Devise, Paperclip, pg (Postgres), Stripe, Mailgun, DotEnv, aws-sdk and geocoder.`
 
----------------
+------------------
 
-## 7. Future Updates
+## 9. Future Updates
 
 -------------------
 
-
+## 10. App images
 ![This is the landing page](app/assets/images/landing.png)
 ![This is the find a tutor page](app/assets/images/find_a_tutor.png)
 ![This is the tutor sign up page](app/assets/images/tutor_signup.png)
