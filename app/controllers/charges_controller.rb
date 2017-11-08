@@ -19,7 +19,9 @@ def create
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
-
+  current_user.tutor.upgrade = true
+  current_user.tutor.save
+  
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path

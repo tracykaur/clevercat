@@ -7,9 +7,8 @@ class PagesController < ApplicationController
   def tutor_signup
   end
 
-
   def find_a_tutor
-    @tutors = Tutor.all
+    @tutors = Tutor.order(:upgrade)
     @map_tutors = []
     User.where({role:"tutor"}).each do |user|
       skills = []
