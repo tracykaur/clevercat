@@ -14,9 +14,8 @@ Rails.application.routes.draw do
   get 'profile/:id', to: 'pages#show'
 
   get 'facebook', to: 'pages#facebook'
-  get 'charges/new'
-  get 'charges/create'
-  resources :charges
+
+  resources :charges, only: [:new, :create]
 
   resources :tutors
 

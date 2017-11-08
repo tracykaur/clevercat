@@ -2,7 +2,8 @@
 
 <h3>It’s simply paying a little money to get your ad – regular or featured –
   back to the top of the listings. </h3>
-<%= form_tag charges_path do %>
+
+<%= form_with url: charges_path, local: true do %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
