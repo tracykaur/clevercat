@@ -4,8 +4,9 @@
 }
 
 .background_image{
+  padding-top: 1000px;
   background-image: image-url("thought.jpg");
-  background-size: 90%;
+  background-size: 70%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,8 +21,9 @@
 }
 
 .box{
-  background-color: rgba(0,0,0,0.1);
-  padding: 30px;
+  background-color: rgba(62,65,69,0.1);
+  padding: 20px;
+  border-radius: 20px;
   padding-left: 200px;
   height: 400px;
   width: 80%;
@@ -34,7 +36,7 @@
 
 .sign_up{
   background-image: image-url("boy_chalkboard.jpg");
-  background-size: 90%;
+  background-size: 70%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -49,15 +51,16 @@
 }
 
 .text{
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(47,46,45,0.4);
   padding: 10px;
+  border-radius: 20px;
   padding-left: 100px;
-  height: 300px;
+  height: 400px;
   width: 80%;
   text-align:center;
   margin: 0 auto;
   position: relative;
-  transform: translateY(50%);
+  transform: translateY(30%);
   color: #37aee5;
 }
 
