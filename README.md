@@ -9,9 +9,8 @@
 6. Workflow Diagram
 7. Entity Relationship Diagram
 8. List of Tools Used
-9. Future Updates
-10. App images
-
+9. Project Plan
+10. Future Updates
 
 ------------------
 
@@ -35,11 +34,11 @@ Configuration - you will not have an ENV file as this has been ignored through G
 2. Run `bundle install` in terminal.
 3. Run `rails db:migrate` in terminal.
 4. Create a `.env` file in the root of the directory, then add your own ENV variables :
-   - `STRIPE_PUBLISHABLE_KEY=`
-   - `STRIPE_SECRET_KEY=`
-   - `POSTGRES_PASSWORD=`
-   - `MAILGUN_API_KEY=`
-   - `MAILGUN_DOMAIN_KEY=`
+   - `STRIPE_PUBLISHABLE_KEY=XXXX`
+   - `STRIPE_SECRET_KEY=XXXX`
+   - `POSTGRES_PASSWORD=XXXX`
+   - `MAILGUN_API_KEY=XXXX`
+   - `MAILGUN_DOMAIN_KEY=XXXX`
 
 --------------
 
@@ -75,22 +74,38 @@ Configuration - you will not have an ENV file as this has been ignored through G
 -------------
 
 ## 7. Entity Relationship Diagram
+![This is the ERD](app/assets/images/ERD.png)
 
 ----------------
 
 ## 8. List of Tools Used
-1. Github - for version control, user stories and to assign story points.
-2. Lucidchart - for ERD
-3. Rubocop for code review
-4. Gems: `Devise, Paperclip, pg (Postgres), Stripe, Mailgun, DotEnv, aws-sdk and geocoder.`
+1. Github - Version control, user stories and to assign story points for project management.
+2. Lucidchart - ERD
+3. postgresql - Database
+4. Devise - authentication
+5. Devise-Bootstrap-Views - Devise Styling
+6. aws-sdk - AWS S3 bucket
+7. Namecheap - domain purchase
+8. Cloudflare - DNS server
+9. Webhosting - Heroku
+10. Mailgun - emails
+11. Stripe - payments
+12. Rubocop - code quality
+13. Balsamiq - wireframing
+14. Paperclip - image uploads
+15. dotenv-rails - environmental variables
+16. geocoder - longitude latitude geocoding
+17. Google Maps - map locations
+18. activeadmin - admin dashboard 
 
 ------------------
 
-## 9. Future Updates
+## 9. Project Plan
 
 -------------------
+## 10. Future Updates
 
-## 10. App images
+
 ![This is the landing page](app/assets/images/landing.png)
 ![This is the find a tutor page](app/assets/images/find_a_tutor.png)
 ![This is the tutor sign up page](app/assets/images/tutor_signup.png)

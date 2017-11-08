@@ -23,6 +23,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'mailgun-ruby', '~>1.1.6'
 
+gem 'rubocop', '~> 0.51.0', require: false
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
