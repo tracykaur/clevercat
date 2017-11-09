@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+
   before_action do
    @conversation = Conversation.find(params[:conversation_id])
   end
@@ -9,7 +10,7 @@ class MessagesController < ApplicationController
     @over_ten = true
     @messages = @messages[-10..-1]
   end
-  
+
   if params[:m]
    @over_ten = false
    @messages = @conversation.messages
