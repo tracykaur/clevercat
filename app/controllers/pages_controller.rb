@@ -15,16 +15,18 @@ class PagesController < ApplicationController
       user.tutor.skills.each do |skill|
         skills.push(skill.name)
       end
-      @map_tutors.push({
-        latitude:user.latitude,
-        longitude:user.longitude,
-        name:user.name,
-        headline:user.tutor.headline,
-        skills:skills,
-        hourly_rate: user.tutor.hourly_rate,
-        avatar:user.tutor.avatar.url(:thumb),
-        id:user.tutor.id,
-      })
+      if !user.latitude.nil?
+        @map_tutors.push({
+          latitude:user.latitude,
+          longitude:user.longitude,
+          name:user.name,
+          headline:user.tutor.headline,
+          skills:skills,
+          hourly_rate: user.tutor.hourly_rate,
+          avatar:user.tutor.avatar.url(:thumb),
+          id:user.tutor.id,
+        })
+      end
     end
   end
 

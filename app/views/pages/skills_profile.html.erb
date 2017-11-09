@@ -1,13 +1,14 @@
 <%= form_with model: @skill, local: true, url: "/tutor/skill" do |f| %>
 
-
+<br>
 <div class="field">
-  <%= f.label :skills %><br>
+  <strong><%= f.label :skills %></strong><br>
   <%= f.collection_select(:skill_id, Skill.all, :id, :name) %><br>
 </div>
 
 <br>
 <div class="actions">
+<strong><%= f.label "Add each Skill" %></strong><br>
   <%= f.submit class: 'btn btn-primary' %>
 </div>
 
@@ -16,5 +17,5 @@
 <%= skill.name %><br>
 
 <% end %>
-
-<%= link_to "finished!", profile_path %>
+<br>
+<br><%= link_to "Finished Updating All My Skills!", profile_path %>
