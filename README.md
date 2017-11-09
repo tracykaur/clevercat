@@ -72,6 +72,7 @@ Configuration - you will not have an ENV file as this has been ignored through G
 -----------------------
 
 ## 6. Workflow Diagram
+![This is the ERD](app/assets/images/workflow.png)
 
 -------------
 
@@ -104,6 +105,7 @@ Configuration - you will not have an ENV file as this has been ignored through G
 ------------------
 
 ## 9. Project Plan
+![This is the project Plan](app/assets/images/projectplan.png)
 
 -------------------
 ## 10. Future Updates

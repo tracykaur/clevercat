@@ -20,4 +20,4 @@
 /public/system
 
 .env
-/seeds.rb
+/db/seeds.rb

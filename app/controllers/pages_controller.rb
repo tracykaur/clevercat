@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   def find_a_tutor
     @tutors = Tutor.order(:upgrade)
     @map_tutors = []
-    User.where({role:"tutor"}).each do |user|
+    User.where(role: "tutor").each do |user|
       skills = []
       user.tutor.skills.each do |skill|
         skills.push(skill.name)
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
           skills:skills,
           hourly_rate: user.tutor.hourly_rate,
           avatar:user.tutor.avatar.url(:thumb),
-          id:user.tutor.id,
+          id:user.id,
         })
       end
     end
@@ -41,7 +41,7 @@ class PagesController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-
+    puts @user.inspect
     @skills = @user.tutor.skills
     @headline = @user.tutor.headline
     @description = @user.tutor.description
