@@ -1,12 +1,13 @@
 <div class="container-fluid">
   <p id="notice"><%= notice %></p>
 
-  <% if user_signed_in? and @tutor_id = current_user.tutor %>
+  <% if user_signed_in? and @user.tutor == current_user.tutor %>
   <h6><%= link_to 'Do you need to Edit Your Profile?', "/edit-profile" %></h6><br>
   <% end %>
 
   <p><strong>Profile Avatar:</strong></p>
   <%= image_tag @image%>
+
 
   <p>
     <strong>Profile Headline:</strong>
@@ -31,12 +32,13 @@
     <% end %>  </p>
 
     <% if user_signed_in? %>
-    <%= link_to t(".contact", :default => t("helpers.links.contact_owner")),conversations_path(sender_id: current_user.id, recipient_id: @tutor_id), :method => 'post', :class => 'btn btn-primary' %>
+      <%= link_to t(".contact", :default => t("helpers.links.contact_tutor")), conversations_path(sender_id: current_user.id, recipient_id: @user.id), :method => 'post', :class => 'btn btn-primary' %>
     <% end %>
 
-    <% if user_signed_in? and @tutor_id = current_user.tutor %>
-    <h6><%= link_to 'Do you want to Bump Up Your Profile', "/charges/new"%></h6><br>
+    <% if user_signed_in? and @user.tutor == current_user.tutor %>
+      <h6><%= link_to 'Do you want to Bump Up Your Profile', "/charges/new"%></h6><br>
     <% end %>
+
 
 
 </div>

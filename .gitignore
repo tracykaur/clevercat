@@ -20,3 +20,4 @@
 /public/system
 
 .env
+/seeds.rb

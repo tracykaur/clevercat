@@ -37,16 +37,16 @@ class PagesController < ApplicationController
 
   def show
     if params[:id].nil?
-      user = current_user
+      @user = current_user
     else
-      user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
 
-    @skills = user.tutor.skills
-    @headline = user.tutor.headline
-    @description = user.tutor.description
-    @hourly_rate = user.tutor.hourly_rate
-    @image = user.tutor.avatar.url(:medium)
+    @skills = @user.tutor.skills
+    @headline = @user.tutor.headline
+    @description = @user.tutor.description
+    @hourly_rate = @user.tutor.hourly_rate
+    @image = @user.tutor.avatar.url(:medium)
   end
 
 

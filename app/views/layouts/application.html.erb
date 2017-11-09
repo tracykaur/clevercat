@@ -19,11 +19,14 @@
       		<nav id="navigation" class="nav" role="navigation" onclick="">
     			<ul>
     				<li class="current"><a href="/"><%= image_tag "CleverCat(2).jpg", size: "80x80" %></a></li>
-    				<li><a href="/">About</a></li>
     				<li><a href="/find_a_tutor">Find a Tutor</a></li>
     				<li><a href="/tutor_signup">Start Tutoring</a></li>
 
           <span class="navbar-text">
+            <% if !user_signed_in? %>
+              <%= link_to "Log in", new_user_session_path %>
+            <% end %>
+
             <% if user_signed_in? %>
               Welcome, <%= current_user.email %> | <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
             <% end %>
