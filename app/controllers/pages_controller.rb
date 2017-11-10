@@ -13,20 +13,23 @@ class PagesController < ApplicationController
     User.where(role: "tutor").each do |user|
       puts user.inspect
       skills = []
-      user.tutor.skills.each do |skill|
-        skills.push(skill.name)
-      end
-      if !user.latitude.nil?
-        @map_tutors.push({
-          latitude:user.latitude,
-          longitude:user.longitude,
-          name:user.name,
-          headline:user.tutor.headline,
-          skills:skills,
-          hourly_rate: user.tutor.hourly_rate,
-          avatar:user.tutor.avatar.url(:thumb),
-          id:user.id,
-        })
+      if !user.tutor.nil?
+        user.tutor.skills.each do |skill|
+          skills.push(skill.name)
+        end
+
+        if !user.latitude.nil?
+          @map_tutors.push({
+            latitude:user.latitude,
+            longitude:user.longitude,
+            name:user.name,
+            headline:user.tutor.headline,
+            skills:skills,
+            hourly_rate: user.tutor.hourly_rate,
+            avatar:user.tutor.avatar.url(:thumb),
+            id:user.id,
+          })
+        end
       end
     end
   end
