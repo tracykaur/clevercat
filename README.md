@@ -105,10 +105,16 @@ Configuration - you will not have an ENV file as this has been ignored through G
 ------------------
 
 ## 9. Project Plan
-![This is the project Plan](app/assets/images/projectplan.png)
+![This is the project Plan](app/assets/images/Projectplan.png)
 
 -------------------
-## 10. Future Updates
+## 10. Bugs/Future Updates
+1. If two users are from the same location you can not zoom into the map.
+2. Conversations path is not viewable.
+3. I would like to add a function where students can ask an instant question to be answered by a tutor.
+4. Functions to search by skill and location.
+
+
 
 
 ![This is the landing page](app/assets/images/landing.png)
