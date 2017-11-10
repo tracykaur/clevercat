@@ -1,5 +1,16 @@
-<% if @over_ten %>
- <%= link_to 'Show Previous', '?m=all' %>
+<div class="container">
+<%= link_to 'Back', conversations_path, class: "btn btn-primary" %>
+  <h3>Begin Message With
+  <%= @conversation.sender.name %>
+  and
+  <%= @conversation.recipient.name %></h3><div class="container">
+  <%= link_to 'Back', conversations_path, class: "btn btn-primary" %>
+  <h3>Begin Message With
+  <%= @conversation.sender.name %>
+  and
+  <%= @conversation.recipient.name %></h3>
+  <% if @over_ten %>
+  <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
 <div class="ui segment">
  <% @messages.each do |message| %>

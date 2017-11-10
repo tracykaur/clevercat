@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @tutors = Tutor.order(:upgrade)
     @map_tutors = []
     User.where(role: "tutor").each do |user|
+      puts user.inspect
       skills = []
       user.tutor.skills.each do |skill|
         skills.push(skill.name)
