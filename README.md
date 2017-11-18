@@ -26,7 +26,7 @@ With the immense growth and popularity of on-demand services in other major indu
 A tutoring app solves a real problem for students of all ages and parents — to find an affordable and knowledgeable tutor on-demand.
 
 The design is based on a two sided marketplace whereby tutors can advertise their skills and students can search for tutors based on their skills and locations.
-But now tutors are offered and reviewed online. The app allows you to seamlessly contact tutors nearby and schedule a session at a fraction of the cost of traditional services.
+Tutors are offered and reviewed online. The app allows you to seamlessly contact tutors nearby and schedule a session at a fraction of the cost of traditional services.
 
 -----------------------
 ## 2 Installation
@@ -67,12 +67,12 @@ Configuration - you will not have an ENV file as this has been ignored through G
 -----------------------
 
 ## 5. Wireframing
-![This is the ERD](app/assets/images/wireframe.png)
+![This is the Wireframe](app/assets/images/wireframe.png)
 
 -----------------------
 
 ## 6. Workflow Diagram
-![This is the ERD](app/assets/images/workflow.png)
+![This is the Workflow](app/assets/images/workflow.png)
 
 -------------
 
