@@ -120,10 +120,10 @@ var locations = <%= @map_tutors.to_json.html_safe %>;
 
   <% @tutors.each do |tutor| %>
     <div class="row listing">
-      <div class="col-md-3 listing-photo"><br>
-        <%= image_tag tutor.avatar.url(:medium) %><br>
+      <div class="col-md-2 listing-photo"><br>
+        <%= image_tag tutor.avatar.url(:thumb) %><br>
       </div>
-      <div class="col-md-9 listing-text">
+      <div class="col-md-10 listing-text">
     <strong>Profile Headline:</strong>
     <p> <%= tutor.headline %> </p>
     <strong>Description:</strong>
